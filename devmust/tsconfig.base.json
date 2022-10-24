@@ -1,0 +1,26 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "esnext",
+        "lib": ["es2017", "dom"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@devmust/orders": ["libs/orders/src/index.ts"],
+            "@devmust/products": ["libs/products/src/index.ts"],
+            "@devmust/ui": ["libs/ui/src/index.ts"],
+            "@devmust/users": ["libs/users/src/index.ts"],
+            "@devmust/components" : ["/libs/products/src/lib/components/categories-banner/categories-banner.component.ts"]
+        }
+    },
+    "exclude": ["node_modules", "tmp"]
+}

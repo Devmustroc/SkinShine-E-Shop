@@ -1,0 +1,35 @@
+.categories-banner {
+    margin-top: 400px;
+    h3 {
+        margin-bottom: 20px;
+        color: black;
+    }
+    .category {
+        min-height: 100px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background-color: #F7F8F9;
+        box-shadow:  20px 20px 60px #d2d3d4,
+        -20px -20px 60px #ffffff;
+        &-icon {
+            .pi {
+                font-size: 2em;
+                margin-bottom: 10px;
+            }
+        }
+        &-name {
+            margin-left: 10px;
+            font-size: 1.5em;
+            color: black;
+        }
+    }
+    .p-card {
+        border-radius: 50px;
+        background-color: #F7F8F9;
+        box-shadow:  20px 20px 60px #d2d3d4,
+        -20px -20px 60px #ffffff;
+    }
+}
