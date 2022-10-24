@@ -14,6 +14,7 @@ import {FormsModule} from "@angular/forms";
 import {ProductPageComponent} from "./pages/product-page/product-page.component";
 import {RatingModule} from "primeng/rating";
 import {InputNumberModule} from "primeng/inputnumber";
+import {UiModule} from "@devmust/ui";
 
 
 
@@ -25,7 +26,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-    imports: [CommonModule, OrdersModule, RouterModule.forChild(routes), ButtonModule, CardModule, CheckboxModule, FormsModule, RatingModule, InputNumberModule,],
+    imports: [CommonModule, OrdersModule, RouterModule.forChild(routes), ButtonModule, CardModule, CheckboxModule, FormsModule, RatingModule, InputNumberModule, UiModule,],
   declarations: [
     ProductsSearchComponent,
     CategoriesBannerComponent,

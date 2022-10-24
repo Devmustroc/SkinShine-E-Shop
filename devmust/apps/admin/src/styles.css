@@ -1,7 +1,7 @@
 /* Error: Can't find stylesheet to import.
  *    ,
- * 11 | @import 'primeflex/primeflex.scss';
- *    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ * 11 | @import '~primeflex/primeflex.scss';
+ *    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
  *    '
  *   ../../../styles/admin.scss 11:9  @import
  *   styles.scss 2:9                  root stylesheet */
@@ -14,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 11 \2502  @import 'primeflex/primeflex.scss';\a    \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   ../../../styles/admin.scss 11:9  @import\a   styles.scss 2:9                  root stylesheet";
+  content: "Error: Can't find stylesheet to import.\a    \2577 \a 11 \2502  @import '~primeflex/primeflex.scss';\a    \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   ../../../styles/admin.scss 11:9  @import\a   styles.scss 2:9                  root stylesheet";
 }

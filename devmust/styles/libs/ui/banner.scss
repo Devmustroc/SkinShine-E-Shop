@@ -29,25 +29,26 @@
         text-align: right;
         width: 30%;
     }
+
+    .p-card {
+        border-radius: 50px;
+        background-color: #F7F8F9;
+        box-shadow:  20px 20px 60px #d2d3d4,
+        -20px -20px 60px #ffffff;
+    }
     &-button {
-        background-color: #733CC5;
+        background-color: $primary-color;
         color: white;
         border: 0;
         border-radius: 13px;
         height: 50px;
 
         &:enabled:hover {
-            background-color: #733CC5;
+            background-color: $primary-color;
             color: white;
             border: 0;
 
         }
-    }
-    .p-card {
-        border-radius: 50px;
-        background-color: #F7F8F9;
-        box-shadow:  20px 20px 60px #d2d3d4,
-        -20px -20px 60px #ffffff;
     }
 
 }
