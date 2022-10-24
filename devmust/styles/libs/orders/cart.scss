@@ -1,15 +1,19 @@
 .cart-page {
+    margin-top: 40px;
     button {
         background-color: $primary-color;
         border: 0;
     }
     .cart {
+        padding-top: 10px;
         &-shipping {
+            padding-top: 20px;
+            font-weight: bold;
             color: var(--green-700);
         }
 
         &-item {
-            align-content: center;
+            align-items: center;
             margin-top: 20px;
             margin-bottom: 20px;
             border: 1px solid var(--surface-300);
@@ -19,6 +23,11 @@
             background-color: #F7F8F9;
             box-shadow:  20px 20px 60px #d2d3d4,
             -20px -20px 60px #ffffff;
+            .button-color{
+                button {
+                    background-color: orangered;
+                }
+            }
 
             &-image {
                 img {
@@ -47,8 +56,10 @@
 
             &-subtotal {
                 font-weight: 600;
+                float: left;
                 &-value {
                     color: var(--green-600);
+                    float: right;
                 }
             }
         }
