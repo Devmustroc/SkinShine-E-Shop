@@ -1,0 +1,22 @@
+footer {
+    border-radius: 20px;
+    background-color: #F7F8F9;
+    box-shadow:  20px 20px 60px #d2d3d4,
+    -20px -20px 60px #ffffff;
+    min-height: 50px;
+    padding: 20px 35px;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    .footer-wrapper {
+        align-items: center;
+
+        .social {
+            margin-top: 15px;
+            text-align: right;
+            .nav {
+                justify-content: flex-end;
+            }
+        }
+    }
+}
