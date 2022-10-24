@@ -9,14 +9,19 @@ import { FeaturedProductsComponent } from './components/featured-products/featur
 import { ButtonModule } from 'primeng/button';
 import {CardModule} from "primeng/card";
 import {ProductsListComponent} from "./pages/products-list/products-list.component";
-import {CheckboxModule} from "primeng/checkbox";
+import {CheckboxModule} from 'primeng/checkbox';
+import {FormsModule} from "@angular/forms";
+
+
+
 
 const routes: Routes = [
-    {path: 'products', component: ProductsListComponent}
+    {path: 'products', component: ProductsListComponent},
+    {path: 'category/:categoryid', component: ProductsListComponent},
 ]
 
 @NgModule({
-    imports: [CommonModule, OrdersModule, RouterModule.forChild(routes), ButtonModule, CardModule, CheckboxModule],
+    imports: [CommonModule, OrdersModule, RouterModule.forChild(routes), ButtonModule, CardModule, CheckboxModule, FormsModule,],
   declarations: [
     ProductsSearchComponent,
     CategoriesBannerComponent,
