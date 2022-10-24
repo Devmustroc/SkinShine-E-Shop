@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -14,6 +13,7 @@ import {ProductsModule} from "@devmust/products";
 import {CardModule} from "primeng/card";
 import {HttpClientModule} from "@angular/common/http";
 import {UiModule} from "@devmust/ui";
+import {OrdersModule} from "@devmust/orders";
 
 const routes: Routes = [
     { path: '', component: HomePageComponent },
@@ -21,7 +21,7 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [AppComponent, NxWelcomeComponent, HomePageComponent, HeaderComponent, FooterComponent, NavComponent],
-    imports: [BrowserModule, CardModule, HttpClientModule, BrowserAnimationsModule, RouterModule.forRoot(routes), AccordionModule, ProductsModule, UiModule],
+    imports: [BrowserModule, CardModule, HttpClientModule, BrowserAnimationsModule, RouterModule.forRoot(routes), AccordionModule, ProductsModule, UiModule, OrdersModule],
     providers: [],
     bootstrap: [AppComponent],
     exports: [

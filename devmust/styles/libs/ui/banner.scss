@@ -1,17 +1,19 @@
 .banner {
     height: 350px;
     width: 100%;
-    background-color: transparent;
+    background-color: #F7F8F9;
     margin-bottom: 50px;
     &-text {
-        color: var(--surface-700);
+        color: black;
         margin-top: 50px;
+        padding-left: 80px;
         padding-top: 300px;
 
         h1 {
             margin: 0;
-            font-size: 3em;
+            font-size: 4em;
             font-weight: 400;
+            color: $primary-color;
         }
 
         h2 {
@@ -26,8 +28,8 @@
     }
 
     &-image {
-        text-align: right;
-        width: 30%;
+        padding-left: 200px;
+        width: 50%;
     }
 
     .p-card {
