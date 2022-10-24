@@ -1,7 +1,7 @@
 <div class="product-page" *ngIf="product">
     <div class="grid">
         <div class="col-6">
-            <ui-gallery [images]="product.images"></ui-gallery>
+                <ui-gallery [images]="product.images"></ui-gallery>
         </div>
         <div class="col-6 product">
             <h2 class="product-name">{{ product.name }}</h2>
@@ -24,7 +24,7 @@
             </div>
             <div class="product-actions">
                 <button pButton pRipple type="button" label="Buy Now" class="p-button-rounded bg-cyan-600 p-mr-2"></button>
-                <button pButton pRipple type="button" label="Add to Cart" class="p-button-rounded ml-2" (onClick)="addProductToCart()"></button>
+                <button pButton pRipple type="button" label="Add to Cart" class="p-button-rounded ml-2" (click)="addProductToCart()"></button>
             </div>
         </div>
     </div>

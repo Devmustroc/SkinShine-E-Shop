@@ -4,42 +4,48 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Order } from '../models/order';
 
+
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class OrdersService {
 
-  constructor(private http: HttpClient) {}
 
-  getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(`http://localhost:3000/api/v1/orders/`);
-  }
+    constructor(private http: HttpClient) {}
 
-  getOrder(orderId: string): Observable<Order> {
-    return this.http.get<Order>(`http://localhost:3000/api/v1/orders/${orderId}`);
-  }
+    getOrders(): Observable<Order[]> {
+        return this.http.get<Order[]>(`http://localhost:3000/api/v1/orders/`);
+    }
 
-  createOrder(order: Order): Observable<Order> {
-    return this.http.post<Order>(`http://localhost:3000/api/v1/orders/`, order);
-  }
+    getOrder(orderId: string): Observable<Order> {
+        return this.http.get<Order>(`http://localhost:3000/api/v1/orders/${orderId}`);
+    }
 
-  updateOrder(orderStaus: { status: string }, orderId: string): Observable<Order> {
-    return this.http.put<Order>(`http://localhost:3000/api/v1/orders/${orderId}`, orderStaus);
-  }
+    createOrder(order: Order): Observable<Order> {
+        return this.http.post<Order>(`http://localhost:3000/api/v1/orders/`, order);
+    }
 
-  deleteOrder(orderId: string): Observable<any> {
-    return this.http.delete<any>(`http://localhost:3000/api/v1/orders/${orderId}`);
-  }
+    updateOrder(orderStaus: { status: string }, orderId: string): Observable<Order> {
+        return this.http.put<Order>(`http://localhost:3000/api/v1/orders/${orderId}`, orderStaus);
+    }
 
-  getOrdersCount(): Observable<number> {
-    return this.http
-      .get<number>(`http://localhost:3000/api/v1/orders//get/count`)
-      .pipe(map((objectValue: any) => objectValue.orderCount));
-  }
+    deleteOrder(orderId: string): Observable<any> {
+        return this.http.delete<any>(`http://localhost:3000/api/v1/orders/${orderId}`);
+    }
 
-  getTotalSales(): Observable<number> {
-    return this.http
-      .get<number>(`http://localhost:3000/api/v1/orders//get/totalsales`)
-      .pipe(map((objectValue: any) => objectValue.totalsales));
-  }
+    getOrdersCount(): Observable<number> {
+        return this.http
+            .get<number>(`http://localhost:3000/api/v1/orders/get/count`)
+            .pipe(map((objectValue: any) => objectValue.orderCount));
+    }
+
+    getTotalSales(): Observable<number> {
+        return this.http
+            .get<number>(`http://localhost:3000/api/v1/orders/get/totalsales`)
+            .pipe(map((objectValue: any) => objectValue.totalsales));
+    }
+
+    getProduct(productId: string): Observable<any> {
+        return this.http.get<any>(`http://localhost:3000/api/v1/products/${productId}`);
+    }
 }
