@@ -1,38 +1,14 @@
-<div class="product-page" *ngIf="product">
-    <div class="grid">
-        <div class="col-6">
-                <ui-gallery [images]="product.images"></ui-gallery>
-        </div>
-        <div class="col-6 product">
-            <h2 class="product-name">{{ product.name }}</h2>
-            <p class="product-desc">
-                {{ product.description }}
-            </p>
-            <div class="product-rating">
-                <p-rating [(ngModel)]="product.rating" [cancel]="false" [disabled]="true"></p-rating>
-            </div>
-            <div class="product-price">
-                {{ product.price | currency }}
-                <span class="price-before">{{ product.price + 18 | currency }}</span>
-            </div>
-            <div class="product-quantity">
-                <div class="p-field col-12 md-3 p-0">
-                    <label for="quantity" class="mr-2">Quantity</label>
-                    <p-inputNumber [(ngModel)]="quantity" mode="decimal" [showButtons]="true" inputId="quantity" [min]="0" [max]="100">
-                    </p-inputNumber>
-                </div>
-            </div>
-            <div class="product-actions">
-                <button pButton pRipple type="button" label="Buy Now" class="p-button-rounded bg-cyan-600 p-mr-2"></button>
-                <button pButton pRipple type="button" label="Add to Cart" class="p-button-rounded ml-2" (click)="addProductToCart()"></button>
-            </div>
-        </div>
+<div class="grid grid-nogutter surface-section text-800">
+    <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
+        <section>
+            <span class="block text-6xl font-bold mb-1">SkinSHine Lixus </span>
+            <div class="text-6xl text-purple-700 font-bold mb-3">New 2022 Product</div>
+            <button pButton pRipple label="Learn More" type="button" class="mr-3 p-button-raised" routerLink="/products/"></button>
+        </section>
     </div>
-    <p-card>
-    <div class="p-grid product-rich-desc">
-        <div class="p-col-12">
-            <div [innerHTML]="product.richDescription"></div>
-        </div>
+    <div class="col-12 md:col-6 overflow-hidden">
+        <img src="assets/images/banner-page.png" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
     </div>
-    </p-card>
 </div>
+
+

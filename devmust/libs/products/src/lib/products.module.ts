@@ -14,7 +14,6 @@ import { FormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { UiModule } from '@devmust/ui';
 import {CardModule} from "primeng/card";
-import {LandingPageComponent} from "./pages/landing-page/product-page.component";
 import {ProductPageComponent} from "./pages/product-page/product-page.component";
 
 const routes: Routes = [
@@ -29,7 +28,7 @@ const routes: Routes = [
     {
         path: 'products/:productid',
         component: ProductPageComponent
-    },
+    }
 ];
 @NgModule({
     imports: [
@@ -51,7 +50,6 @@ const routes: Routes = [
         FeaturedProductsComponent,
         ProductsListComponent,
         ProductPageComponent,
-        LandingPageComponent
     ],
     exports: [
         ProductsSearchComponent,
@@ -60,7 +58,6 @@ const routes: Routes = [
         FeaturedProductsComponent,
         ProductsListComponent,
         ProductPageComponent,
-        LandingPageComponent
     ]
 })
 export class ProductsModule {}

@@ -6,11 +6,13 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
+
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  }
+  },
 ];
 
 @NgModule({
@@ -20,7 +22,7 @@ const routes: Routes = [
     InputTextModule,
     ButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [LoginComponent]
 })

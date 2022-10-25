@@ -15,18 +15,24 @@ import {HttpClientModule} from "@angular/common/http";
 import {UiModule} from "@devmust/ui";
 import {OrdersModule} from "@devmust/orders";
 import {UsersModule} from "@devmust/users";
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import {ButtonModule} from "primeng/button";
+import {RippleModule} from "primeng/ripple";
 
 const routes: Routes = [
     { path: '', component: HomePageComponent },
+    {path: 'skinshine', component: LandingPageComponent}
+
 ];
 
 @NgModule({
-    declarations: [AppComponent, NxWelcomeComponent, HomePageComponent, HeaderComponent, FooterComponent, NavComponent],
-    imports: [BrowserModule, CardModule, HttpClientModule, BrowserAnimationsModule, RouterModule.forRoot(routes), AccordionModule, ProductsModule, UiModule, OrdersModule, UsersModule],
+    declarations: [AppComponent, NxWelcomeComponent, HomePageComponent, HeaderComponent, FooterComponent, NavComponent, LandingPageComponent],
+    imports: [BrowserModule, CardModule, HttpClientModule, BrowserAnimationsModule, RouterModule.forRoot(routes), AccordionModule, ProductsModule, UiModule, OrdersModule, UsersModule, ButtonModule, RippleModule],
     providers: [],
     bootstrap: [AppComponent],
     exports: [
-      NavComponent
+      NavComponent,
+      LandingPageComponent
     ]
 })
 export class AppModule {}
