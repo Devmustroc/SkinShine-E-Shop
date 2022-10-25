@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'devmust-header',
+    selector: 'skshop-header',
     templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {

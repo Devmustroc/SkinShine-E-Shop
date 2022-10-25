@@ -15,11 +15,11 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
+            "@devmust/components": ["/libs/products/src/lib/components/categories-banner/categories-banner.component.ts"],
             "@devmust/orders": ["libs/orders/src/index.ts"],
             "@devmust/products": ["libs/products/src/index.ts"],
             "@devmust/ui": ["libs/ui/src/index.ts"],
-            "@devmust/users": ["libs/users/src/index.ts"],
-            "@devmust/components" : ["/libs/products/src/lib/components/categories-banner/categories-banner.component.ts"]
+            "@devmust/users": ["libs/users/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]
