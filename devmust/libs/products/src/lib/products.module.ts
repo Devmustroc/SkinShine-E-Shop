@@ -11,10 +11,11 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { RatingModule } from 'primeng/rating';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
 import { FormsModule } from '@angular/forms';
-import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { UiModule } from '@devmust/ui';
 import {CardModule} from "primeng/card";
+import {LandingPageComponent} from "./pages/landing-page/product-page.component";
+import {ProductPageComponent} from "./pages/product-page/product-page.component";
 
 const routes: Routes = [
     {
@@ -28,7 +29,7 @@ const routes: Routes = [
     {
         path: 'products/:productid',
         component: ProductPageComponent
-    }
+    },
 ];
 @NgModule({
     imports: [
@@ -49,7 +50,8 @@ const routes: Routes = [
         ProductItemComponent,
         FeaturedProductsComponent,
         ProductsListComponent,
-        ProductPageComponent
+        ProductPageComponent,
+        LandingPageComponent
     ],
     exports: [
         ProductsSearchComponent,
@@ -57,7 +59,8 @@ const routes: Routes = [
         ProductItemComponent,
         FeaturedProductsComponent,
         ProductsListComponent,
-        ProductPageComponent
+        ProductPageComponent,
+        LandingPageComponent
     ]
 })
 export class ProductsModule {}

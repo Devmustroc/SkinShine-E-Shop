@@ -8,7 +8,7 @@ import {CartItem, CartService} from "@devmust/orders";
 
 
 @Component({
-    selector: 'products-product-page',
+    selector: 'products-landing-page',
     templateUrl: './product-page.component.html',
     styles: []
 })
