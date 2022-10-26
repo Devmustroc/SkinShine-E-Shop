@@ -1,29 +1,25 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CartService, CartItem } from '@devmust/orders';
 import {Product} from "@devmust/products";
-import {CartItem, CartService} from "@devmust/orders";
-
 
 
 @Component({
-  selector: 'skshop-product-item',
-  templateUrl: './product-item.component.html',
-  styles: []
+    selector: 'skshop-product-item',
+    templateUrl: './product-item.component.html',
+    styles: []
 })
 export class ProductItemComponent implements OnInit {
-  @Input() product: Product;
+    @Input() product: Product;
 
-  constructor(
-      private cartService: CartService
-  ) {}
+    constructor(private cartService: CartService) {}
 
-  ngOnInit(): void {}
+    ngOnInit(): void {}
 
-
-  addProductToCArt() {
-      const cartItem: CartItem = {
-          productId : this.product.id,
-          quantity: 1
-      }
-      this.cartService.setCartItem(cartItem)
-  }
+    addProductToCart() {
+        const cartItem: CartItem = {
+            productId: this.product.id,
+            quantity: 1
+        };
+        this.cartService.setCartItem(cartItem);
+    }
 }

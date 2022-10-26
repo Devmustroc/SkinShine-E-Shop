@@ -2,7 +2,7 @@
   <div class="login-register-panel">
     <div class="grid">
       <div class="col-6">
-        <img src="assets/images/login-image.png" style="width: 188%"/>
+        <img src="assets/images/login-image.png" style="width: 188%" alt="image"/>
       </div>
       <div class="col-6 p-p-5"  style="padding-right: 10px; padding-top: 140px">
           <span class="block text-1xl font-bold mb-1">Welcome!</span>
@@ -14,20 +14,13 @@
                 <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
                 <input type="text" formControlName="email" pInputText placeholder="Email" />
               </div>
-              <small *ngIf="loginForm.email.invalid && isSubmitted" class="p-error"
-                ><span *ngIf="loginForm.email.errors.required">email is required</span>
-                <span *ngIf="loginForm.email.errors.email">email is invalid</span></small
-              >
+              <small *ngIf="loginForm.email.invalid && isSubmitted" class="p-error"><span *ngIf="loginForm.email.errors.required">email is required</span>
+                <span *ngIf="loginForm.email.errors.email">email is invalid</span></small>
             </div>
             <div class="col-12">
               <div class="p-inputgroup">
                 <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
-                <input
-                  type="password"
-                  formControlName="password"
-                  pInputText
-                  placeholder="Password"
-                />
+                <input type="password" formControlName="password" pInputText placeholder="Password"/>
               </div>
               <small *ngIf="loginForm.password.invalid && isSubmitted" class="p-error"
                 >Password is required

@@ -1,6 +1,6 @@
 <div class="featured-products p-mt-5">
-    <h3 class="p-mb-1">Feautured Products</h3>
-    <div class="grid">
+    <span class="block text-4xl font-bold mb-4 pl-8 pt-4 animate__animated animate__slideInLeft">Featured Products</span>
+    <div class="grid animate__animated animate__fadeInLeftBig">
         <div class="col-3" *ngFor="let product of featuredProducts">
             <skshop-product-item [product]="product"></skshop-product-item>
         </div>

@@ -1,13 +1,10 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {ActivatedRoute, Router} from '@angular/router';
-
+import { ActivatedRoute } from '@angular/router';
+import { UsersService, User } from '@devmust/users';
 import { MessageService } from 'primeng/api';
-import * as countriesLib from 'i18n-iso-countries';
-import {User, UsersService} from "@devmust/users";
-
-declare const require
+import { timer } from 'rxjs';
 
 @Component({
     selector: 'admin-users-form',
@@ -26,25 +23,13 @@ export class UsersFormComponent implements OnInit {
         private formBuilder: FormBuilder,
         private usersService: UsersService,
         private location: Location,
-        private route: ActivatedRoute,
-        private router:Router,
+        private route: ActivatedRoute
     ) {}
 
     ngOnInit(): void {
         this._initUserForm();
         this._getCountries();
         this._checkEditMode();
-    }
-
-    private _getCountries() {
-        countriesLib.registerLocale(require("i18n-iso-countries/langs/en.json"));
-        this.countries = Object.entries(countriesLib.getNames("en", {select: "official"})).map(entry => {
-            return {
-                id : entry[0],
-                name: entry[1]
-            }
-        });
-        console.log(this.countries)
     }
 
     private _initUserForm() {
@@ -62,20 +47,56 @@ export class UsersFormComponent implements OnInit {
         });
     }
 
+    private _getCountries() {
+        this.countries = this.usersService.getCountries();
+    }
+
     private _addUser(user: User) {
-        this.usersService.createUser(user).subscribe({
-            next: () => this.messageService.add({severity: 'success', summary: 'Success', detail: `User ${user.name} is Created`}),
-            error: () => this.messageService.add({severity: 'error', summary: 'Error', detail: `User ${user.name} could not be Created`}),
-            complete: () => setTimeout(() => this.router.navigate(['/users']), 2000)
-        });
+        this.usersService.createUser(user).subscribe(
+            (user: User) => {
+                this.messageService.add({
+                    severity: 'success',
+                    summary: 'Success',
+                    detail: `User ${user.name} is created!`
+                });
+                timer(2000)
+                    .toPromise()
+                    .then(() => {
+                        this.location.back();
+                    });
+            },
+            () => {
+                this.messageService.add({
+                    severity: 'error',
+                    summary: 'Error',
+                    detail: 'User is not created!'
+                });
+            }
+        );
     }
 
     private _updateUser(user: User) {
-        this.usersService.updateUser(user).subscribe({
-            next: () => this.messageService.add({severity: 'success', summary: 'Success', detail: `User ${user.name} is updated `}),
-            error: () => this.messageService.add({severity: 'error', summary: 'Error', detail: `User ${user.name} could not be updated`}),
-            complete: () => setTimeout(() => this.router.navigate(['/users']), 2000)
-        });
+        this.usersService.updateUser(user).subscribe(
+            () => {
+                this.messageService.add({
+                    severity: 'success',
+                    summary: 'Success',
+                    detail: 'User is updated!'
+                });
+                timer(2000)
+                    .toPromise()
+                    .then(() => {
+                        this.location.back();
+                    });
+            },
+            () => {
+                this.messageService.add({
+                    severity: 'error',
+                    summary: 'Error',
+                    detail: 'User is not updated!'
+                });
+            }
+        );
     }
 
     private _checkEditMode() {
@@ -93,6 +114,7 @@ export class UsersFormComponent implements OnInit {
                     this.userForm.zip.setValue(user.zip);
                     this.userForm.city.setValue(user.city);
                     this.userForm.country.setValue(user.country);
+
                     this.userForm.password.setValidators([]);
                     this.userForm.password.updateValueAndValidity();
                 });

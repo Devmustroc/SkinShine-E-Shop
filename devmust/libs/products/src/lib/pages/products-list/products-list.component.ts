@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Category } from '../../models/category';
-import { Product } from '../../models/product';
-import { CategoriesService } from '../../services/categories.service';
-import { ProductsService } from '../../services/products.service';
+import {CategoriesService, Category, Product, ProductsService} from "@devmust/products";
+
 
 @Component({
-    selector: 'products-list',
+    selector: 'skshop-products-list',
     templateUrl: './products-list.component.html',
     styles: []
 })

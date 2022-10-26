@@ -23,22 +23,11 @@
                             <td>{{ order.totalPrice }}</td>
                             <td>{{ order.dateOrdered | date: 'short' }}</td>
                             <td>
-                                <p-tag
-                                    [value]="orderStatus[order.status].label"
-                                    [severity]="orderStatus[order.status].color"
-                                ></p-tag>
+                                <p-tag [value]="orderStatus[order.status].label" [severity]="orderStatus[order.status].color"></p-tag>
                             </td>
                             <td>
-                                <p-button
-                                    (click)="deleteOrder(order.id)"
-                                    styleClass="p-button-danger p-mr-2"
-                                    icon="pi pi-trash"
-                                ></p-button>
-                                <p-button
-                                    (click)="showOrder(order.id)"
-                                    styleClass="p-button-success"
-                                    icon="pi pi-eye"
-                                ></p-button>
+                                <p-button (click)="deleteOrder(order.id)" styleClass="p-button-danger p-mr-2"  class="mr-4" icon="pi pi-trash"></p-button>
+                                <p-button (click)="showOrder(order.id)" styleClass="p-button-info p-pl-4" icon="pi pi-eye"></p-button>
                             </td>
                         </tr>
                     </ng-template>

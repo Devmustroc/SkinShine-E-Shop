@@ -32,7 +32,7 @@ const routes: Routes = [
     bootstrap: [AppComponent],
     exports: [
       NavComponent,
-      LandingPageComponent
+      LandingPageComponent,
     ]
 })
 export class AppModule {}
