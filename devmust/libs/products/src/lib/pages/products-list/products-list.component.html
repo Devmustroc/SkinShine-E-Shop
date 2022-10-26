@@ -1,20 +1,21 @@
-
 <div class="products-page">
-    <div class="grid">
-        <div class="col-3" *ngIf="!isCategoryPage">
+    <div class="p-grid">
+        <div class="p-col-3" *ngIf="!isCategoryPage">
             <h4>Categories</h4>
-            <div class="p-field-checkbox mb-2" *ngFor="let category of categories">
-                <p-checkbox [(ngModel)]="category.checked" binary="true" [inputId]="category.id" (onChange)="categoryFilter()" style="margin-right: 10px"></p-checkbox>
-                <label for="{{ category.id }}" style="margin-right: 10px; font-size:1.2em">{{ category.name}}</label>
+            <div class="p-field-checkbox" *ngFor="let category of categories">
+                <p-checkbox
+                    [(ngModel)]="category.checked"
+                    binary="true"
+                    [inputId]="category.id"
+                    (onChange)="categoryFilter()"
+                ></p-checkbox>
+                <label for="{{ category.id }}">{{ category.name }}</label>
             </div>
         </div>
-        <div [ngClass]="{ 'col-9': !isCategoryPage, 'col-12': isCategoryPage }">
-            <div class="grid" *ngIf="products">
-                <div
-                    [ngClass]="{ 'col-4': !isCategoryPage, 'col-3': isCategoryPage }"
-                    *ngFor="let product of products"
-                >
-                    <products-product-item [product]="product"></products-product-item>
+        <div [ngClass]="{ 'p-col-9': !isCategoryPage, 'p-col-12': isCategoryPage }">
+            <div class="p-grid" *ngIf="products">
+                <div [ngClass]="{ 'p-col-4': !isCategoryPage, 'p-col-3': isCategoryPage }" *ngFor="let product of products">
+                    <skshop-product-item [product]="product"></skshop-product-item>
                 </div>
             </div>
         </div>

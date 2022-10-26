@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { RouterModule, Routes } from '@angular/router';
 import { ShellComponent } from './shared/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -13,7 +12,7 @@ import { ProductsListComponent } from './pages/products/products-list/products-l
 import { ProductsFormComponent } from './pages/products/products-form/products-form.component';
 import { UsersListComponent } from './pages/users/users-list/users-list.component';
 import { UsersFormComponent } from './pages/users/users-form/users-form.component';
-
+import { JwtInterceptor, UsersModule } from '@devmust/users';
 import { CardModule } from 'primeng/card';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
@@ -35,14 +34,11 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { OrdersListComponent } from './pages/orders/orders-list/orders-list.component';
 import { OrdersDetailComponent } from './pages/orders/orders-detail/orders-detail.component';
 import { FieldsetModule } from 'primeng/fieldset';
-import {UsersModule} from "@devmust/users";
+import {RouterOutlet} from "@angular/router";
 
 const UX_MODULE = [
     CardModule,
-    ToastModule,
     InputTextModule,
-    TableModule,
-    ToolbarModule,
     ButtonModule,
     ConfirmDialogModule,
     ColorPickerModule,
@@ -54,63 +50,6 @@ const UX_MODULE = [
     TagModule,
     InputMaskModule,
     FieldsetModule
-];
-
-const routes: Routes = [
-    {
-        path: '',
-        component: ShellComponent,
-        children: [
-            {
-                path: 'dashboard',
-                component: DashboardComponent
-            },
-            {
-                path: 'categories',
-                component: CategoriesListComponent
-            },
-            {
-                path: 'categories/form',
-                component: CategoriesFormComponent
-            },
-            {
-                path: 'categories/form/:id',
-                component: CategoriesFormComponent
-            },
-            {
-                path: 'products',
-                component: ProductsListComponent
-            },
-            {
-                path: 'products/form',
-                component: ProductsFormComponent
-            },
-            {
-                path: 'products/form/:id',
-                component: ProductsFormComponent
-            },
-            {
-                path: 'users',
-                component: UsersListComponent
-            },
-            {
-                path: 'users/form',
-                component: UsersFormComponent
-            },
-            {
-                path: 'users/form/:id',
-                component: UsersFormComponent
-            },
-            {
-                path: 'orders',
-                component: OrdersListComponent
-            },
-            {
-                path: 'orders/:id',
-                component: OrdersDetailComponent
-            }
-        ]
-    }
 ];
 
 @NgModule({
@@ -126,19 +65,26 @@ const routes: Routes = [
         UsersListComponent,
         UsersFormComponent,
         OrdersListComponent,
-        OrdersDetailComponent
+        OrdersDetailComponent,
+
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
         FormsModule,
-        ReactiveFormsModule,
         UsersModule,
-        RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
-        ...UX_MODULE
+        ReactiveFormsModule,
+
+        ...UX_MODULE,
+        RouterOutlet
     ],
-    providers: [CategoriesService, MessageService, ConfirmationService],
+    providers: [
+        CategoriesService,
+        MessageService,
+        ConfirmationService,
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

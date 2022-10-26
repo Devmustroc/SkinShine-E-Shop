@@ -28,8 +28,8 @@ export class ProductsService {
     return this.http.get<Product>(`http://localhost:3000/api/v1/products/${productId}`);
   }
 
-  updateProduct(productData: FormData, productid: string): Observable<Product> {
-    return this.http.put<Product>(`http://localhost:3000/api/v1/products/${productid}`, productData);
+  updateProduct(productData: FormData, productId: string): Observable<Product> {
+    return this.http.put<Product>(`http://localhost:3000/api/v1/products/${productId}`, productData);
   }
 
   deleteProduct(productId: string): Observable<any> {

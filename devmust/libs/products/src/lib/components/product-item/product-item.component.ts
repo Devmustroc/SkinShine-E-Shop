@@ -5,7 +5,7 @@ import {CartItem, CartService} from "@devmust/orders";
 
 
 @Component({
-  selector: 'products-product-item',
+  selector: 'skshop-product-item',
   templateUrl: './product-item.component.html',
   styles: []
 })
