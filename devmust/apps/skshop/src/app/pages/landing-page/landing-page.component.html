@@ -4,7 +4,7 @@
         <span class="line-height-3">20% discount on all our catalog</span>
     </div>
     <a class="flex align-items-center ml-2 mr-8">
-        <a class="text-white" href="#"><span class="underline font-bold">Learn More</span></a>
+        <a class="text-white" routerLink="/products/"><span class="underline font-bold">Learn More</span></a>
     </a>
     <a pRipple class="flex align-items-center no-underline justify-content-center border-circle text-gray-50 hover:bg-bluegray-700 cursor-pointer transition-colors transition-duration-150" style="width:2rem; height: 2rem">
         <i class="pi pi-times"></i>
@@ -16,7 +16,7 @@
         <section>
             <span class="block text-6xl font-bold mb-1 animate__animated animate__slideInLeft" >SKINSHINE </span>
             <div class="text-6xl text-purple-700 font-bold mb-3 animate__animated animate__slideInLeft">We Increase Your Beauty</div>
-            <button pButton pRipple label="Learn More" type="button" class="mr-3 p-button-raised animate__animated animate__fadeIn"></button>
+            <button pButton pRipple type="button" label="Add to cart" class="p-button-outlined p-button-help animate__animated animate__slideInLeft"></button>
         </section>
     </div>
     <div class="col-12 md:col-6 overflow-hidden">
@@ -24,37 +24,34 @@
     </div>
 </div>
 
-
-<div class="grid pl-8">
+<span class="block text-4xl font-bold mb-4 pl-8 pt-4 animate__animated animate__slideInLeft">Blog Post</span>
+<div class="grid pl-8 animate__animated animate__zoomInDown">
     <div class="col animate__animated animate__rubberBand">
-        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '360px'}" styleClass="p-card-shadow">
+        <p-card header="Nira Pro Laser " subheader="Exclusive launch" [style]="{width: '360px'}" styleClass="p-card-shadow">
             <ng-template pTemplate="header">
                 <img alt="Card" src="assets/images/light-card-image.png">
             </ng-template>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-                quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+            <p>Reduce the appearance of 11 eyebrows, expression lines, brow furrows and more with results you'll love in less than 90 days.</p>
         </p-card>
     </div>
     <div class="col animate__animated animate__rubberBand">
-        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '360px'}" styleClass="p-card-shadow">
+        <p-card header="Dr Harris" subheader="Q&r Dr Harris" [style]="{width: '360px'}" styleClass="p-card-shadow">
             <ng-template pTemplate="header">
                 <img alt="Card" src="assets/images/light-card-image2.png">
             </ng-template>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-                quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+            <p>The Dr. Harris Anti-Wrinkle Sleep Mask is so easy to use anywhere, anytime. Here's how the mask can improve your sleep.</p>
         </p-card>
     </div>
     <div class="col animate__animated animate__rubberBand">
-        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '360px'}" styleClass="p-card-shadow">
+        <p-card header="Dermalux" subheader="Q&R Dermalux" [style]="{width: '360px'}" styleClass="p-card-shadow">
             <ng-template pTemplate="header">
                 <img alt="Card" src="assets/images/light-card-image3.png">
             </ng-template>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-                quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+            <p>Dermalux Flex MD is the world's most powerful home use LED device and addresses many facial and body skin concerns.</p>
         </p-card>
     </div>
     <div class="col animate__animated animate__rubberBand">
-        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '360px'}" styleClass="p-card-shadow">
+        <p-card header="Dermalux" subheader="Q&R Dermalux" [style]="{width: '360px'}" styleClass="p-card-shadow">
             <ng-template pTemplate="header">
                 <img alt="Card" src="assets/images/light-card-image4.png">
             </ng-template>
@@ -63,17 +60,32 @@
         </p-card>
     </div>
 </div>
-
+<span class="block text-4xl font-bold mb-4 pl-8 pt-4 animate__animated animate__slideInLeft" style="align-items: center">About US</span>
 <div class="card">
     <div class="card-container blue-container overflow-hidden">
-        <div class="bg-auto bg-no-repeat bg-center border-round h-20rem w-full" style="background-image: url('./assets/images/Skshop-layout.png');background-attachment: fixed"></div>
+        <div>
+            <div class="grid grid-nogutter surface-section text-800">
+                <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center">
+                    <section>
+                        <span class="block text-6xl text-purple-700 font-bold mb-1 animate__animated animate__slideInLeft" >SKINSHINE </span>
+
+                        <p style="font-size: 1.4em">Skinshine an ecommerce website dedicated to cosmetic products developed by Mustapha Abourar Student at Holberton School<br>
+                            "Before becoming an auto-entrepreneur I created an online store with an online store creation platform after this experience I decided to study web development which will allow me to create my own store with my own means and tools.
+                            Skinshine is an online store offering a wide variety of products and a free delivery service.</p><br>
+                    </section>
+                </div>
+                <div class="col-12 md:col-6 overflow-hidden">
+                    <img src="./assets/images/aboutus1.jpg" alt="Image" class="md:ml-auto block md:h-full">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
     <div class="text-700 text-center">
-        <div class="text-blue-600 font-bold mb-3"><i class="pi pi-instagram"></i>&nbsp;POWERED BY INSTAGRAM</div>
-        <div class="text-900 font-bold text-5xl mb-3">follow us on our instagram store page</div>
-        <button pButton pRipple label="Join Now" icon="pi pi-instagram" class="font-bold px-5 py-3 p-button-raised p-button-rounded white-space-nowrap"></button>
+        <div class="text-blue-600 font-bold mb-3 animate__animated animate__fadeIn"><i class="pi pi-instagram"></i>&nbsp;POWERED BY INSTAGRAM</div>
+        <div class="text-900 font-bold text-5xl mb-3 animate__animated animate__fadeIn">follow us on our instagram store page</div>
+        <button pButton pRipple label="Join Now" icon="pi pi-instagram" class="font-bold px-5 py-3 p-button-raised p-button-rounded white-space-nowrap animate__animated animate__rubberBand"></button>
     </div>
 </div>

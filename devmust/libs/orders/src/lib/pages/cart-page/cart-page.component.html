@@ -12,7 +12,7 @@
             </div>
             <div class="cart-item p-mb-5" *ngFor="let cartItem of cartItemsDetailed">
                 <div class="grid fluid">
-                    <div class="col-2 cart-item-image">
+                    <div class="p-col-2 cart-item-image">
                         <img [src]="cartItem.product.image" [attr.alt]="cartItem.product.name" />
                     </div>
                     <div class="col-7">
@@ -22,7 +22,7 @@
                             <p-button class="button-color" icon="pi pi-trash" (onClick)="deleteCartItem(cartItem)"></p-button>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="p-col-2">
                         <div class="field cart-item-quantity">
                             <p-inputNumber mode="decimal" [showButtons]="true" [inputId]="cartItem.product.id" [min]="1" [max]="100" [(ngModel)]="cartItem.quantity" (onInput)="updateCartItemQuantity($event, cartItem)">
                             </p-inputNumber>
