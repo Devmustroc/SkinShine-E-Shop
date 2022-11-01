@@ -1,11 +1,14 @@
 <div class="categories-banner mt-8">
-    <span class="block text-4xl font-bold mb-4 pl-8 animate__animated animate__flipInY">Categories</span>
-  <div class="grid">
-    <div class="col-2 animate__animated animate__flipInY" *ngFor="let category of categories">
-      <div
-        class="category" [routerLink]="'/category/' + category.id" [ngStyle]="{ backgroundColor: category.color }">
-        <div class="category-name">{{ category.name }}</div>
-      </div>
+    <div class="surface-section px-3 py-4 md:px-3 lg:px-4 text-center pt-0">
+        <img alt="Card"  style="padding-left: 70px" src="assets/images/logo100.png">
+        <span class="block text-4xl font-bold mb-4 pl-8 pt-4 animate__animated animate__slideInLeft" style="align-items: center">Categories</span>
     </div>
-  </div>
+    <div class="grid">
+        <div class="col-4 animate__animated animate__flipInY" *ngFor="let category of categories">
+            <div
+                class="category" [routerLink]="'/category/' + category.id" [ngStyle]="{ backgroundColor: category.color }">
+                <div class="category-name">{{ category.name }}</div>
+            </div>
+        </div>
+    </div>
 </div>

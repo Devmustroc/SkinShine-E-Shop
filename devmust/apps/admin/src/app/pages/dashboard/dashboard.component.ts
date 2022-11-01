@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
                 this.statistics = values;
             });
     }
-
+// destroy
     ngOnDestroy() {
         this.endsubs$.next();
         this.endsubs$.complete();

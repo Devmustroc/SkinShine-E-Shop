@@ -1,3 +1,4 @@
+// import module
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {CategoriesService, Category} from "@devmust/products";
 import {Router} from "@angular/router";
@@ -12,7 +13,7 @@ import {ConfirmationService, MessageService} from "primeng/api";
 })
 export class CategoriesListComponent implements OnInit {
     categories: Category[] = [];
-
+// constructor
     constructor(
         private categoriesService: CategoriesService,
         private router: Router,
@@ -24,7 +25,7 @@ export class CategoriesListComponent implements OnInit {
     ngOnInit(): void {
        this._getCategories()
     }
-
+// delete Categories
     deleteCategory(categoryId: string) {
         this.confirmationService.confirm({
             message: 'Do you want to delete this category?', header: 'Delete Category',
@@ -39,7 +40,7 @@ export class CategoriesListComponent implements OnInit {
         });
 
     }
-
+// update Category
     updateCategory (categoryId: string) {
         this.router.navigateByUrl(`categories/form/${categoryId}`)
     }

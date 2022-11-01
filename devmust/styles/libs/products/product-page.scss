@@ -21,7 +21,7 @@
             font-size: 0.7em;
             margin-left: 10px;
             font-weight: 200;
-            color: red;
+            color: var(--surface-500);
             text-decoration: line-through;
         }
     }
@@ -31,6 +31,7 @@
 
         label {
             font-size: 1.2em;
+            width: 20px;
         }
 
         .p-button {
@@ -41,6 +42,7 @@
 
     &-actions {
         .p-button {
+            margin-left: 20px;
             background-color: $primary-color;
             border: 0;
         }

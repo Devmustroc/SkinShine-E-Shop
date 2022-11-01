@@ -1,17 +1,19 @@
+// Importing module
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '@bluebits/users';
-import { CategoriesFormComponent } from '../../../../../../../Front-End/apps/admin/src/app/pages/categories/categories-form/categories-form.component';
-import { CategoriesListComponent } from '../../../../../../../Front-End/apps/admin/src/app/pages/categories/categories-list/categories-list.component';
-import { DashboardComponent } from '../../../../../../../Front-End/apps/admin/src/app/pages/dashboard/dashboard.component';
-import { OrdersDetailComponent } from '../../../../../../../Front-End/apps/admin/src/app/pages/orders/orders-detail/orders-detail.component';
-import { OrdersListComponent } from '../../../../../../../Front-End/apps/admin/src/app/pages/orders/orders-list/orders-list.component';
-import { ProductsFormComponent } from '../../../../../../../Front-End/apps/admin/src/app/pages/products/products-form/products-form.component';
-import { ProductsListComponent } from '../../../../../../../Front-End/apps/admin/src/app/pages/products/products-list/products-list.component';
-import { UsersFormComponent } from '../../../../../../../Front-End/apps/admin/src/app/pages/users/users-form/users-form.component';
-import { UsersListComponent } from '../../../../../../../Front-End/apps/admin/src/app/pages/users/users-list/users-list.component';
-import { ShellComponent } from '../../../../../../../Front-End/apps/admin/src/app/shared/shell/shell.component';
+import { AuthGuard } from '@devmust/users';
+import {ShellComponent} from "./shared/shell/shell.component";
+import {DashboardComponent} from "./pages/dashboard/dashboard.component";
+import {CategoriesListComponent} from "./pages/categories/categories-list/categories-list.component";
+import {CategoriesFormComponent} from "./pages/categories/categories-form/categories-form.component";
+import {ProductsFormComponent} from "./pages/products/products-form/products-form.component";
+import {ProductsListComponent} from "./pages/products/products-list/products-list.component";
+import {UsersListComponent} from "./pages/users/users-list/users-list.component";
+import {UsersFormComponent} from "./pages/users/users-form/users-form.component";
+import {OrdersListComponent} from "./pages/orders/orders-list/orders-list.component";
+import {OrdersDetailComponent} from "./pages/orders/orders-detail/orders-detail.component";
 
+// Create routes
 const routes: Routes = [
   {
     path: '',
@@ -35,12 +37,12 @@ const routes: Routes = [
         component: CategoriesFormComponent
       },
       {
-        path: 'products',
-        component: ProductsListComponent
-      },
-      {
         path: 'products/form',
         component: ProductsFormComponent
+      },
+      {
+        path: 'products',
+        component: ProductsListComponent
       },
       {
         path: 'products/form/:id',
@@ -71,7 +73,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { initialNavigation: 'enabled' })],
+  imports: [RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' })],
   exports: [RouterModule],
   declarations: [],
   providers: []

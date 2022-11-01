@@ -54,15 +54,16 @@ export class ProductsFormComponent implements OnInit {
             this.catagories = categories;
         });
     }
-
+//adding product with displaying a message
     private _addProduct(productData: FormData) {
         this.productsService.createProduct(productData).subscribe({
+            //toast ng messages
             next: () => this.messageService.add({severity: 'success', summary: 'Success', detail: `Product is updated `}),
             error: () => this.messageService.add({severity: 'error', summary: 'Error', detail: `Product could not be updated`}),
             complete: () => setTimeout(() => this.router.navigate(['/products']), 2000)
         });
     }
-
+// update product with displaying a new message
     private _updateProduct(productFormData: FormData) {
         this.productsService.updateProduct(productFormData, this.currentProductId).subscribe({
             next: () => this.messageService.add({severity: 'success', summary: 'Success', detail: `Product is updated `}),
@@ -70,7 +71,7 @@ export class ProductsFormComponent implements OnInit {
             complete: () => setTimeout(() => this.router.navigate(['/products']), 2000)
         });
     }
-
+// checking an editing form
     private _checkEditMode() {
         this.route.params.subscribe((params) => {
             if (params.id) {
@@ -108,7 +109,7 @@ export class ProductsFormComponent implements OnInit {
         }
     }
     onCancle() {}
-
+// uploading images
     onImageUpload(event) {
         const file = event.target.files[0];
         if (file) {
@@ -121,7 +122,7 @@ export class ProductsFormComponent implements OnInit {
             fileReader.readAsDataURL(file);
         }
     }
-
+// get a product form
     get productForm() {
         return this.form.controls;
     }

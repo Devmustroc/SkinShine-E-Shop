@@ -1,3 +1,4 @@
+// imoort module
 import { Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from "@angular/common";
@@ -37,7 +38,7 @@ export class CategoriesFormComponent implements OnInit {
       this._checkEditMode();
   }
 
-
+// verify and submit if everything is done
   onSubmit() {
       this.isSubmitted = true;
       if (this.form.invalid) {
@@ -58,7 +59,7 @@ export class CategoriesFormComponent implements OnInit {
   onCancle() {
       this.location.back();
   }
-
+// adding categories
   private _addCategory(category: Category) {
       this.categoriesService.createCategory(category).subscribe({
           next: () => this.messageService.add({ severity: 'success', summary: 'Success', detail: `Category ${category.name} is created` }),
@@ -66,7 +67,7 @@ export class CategoriesFormComponent implements OnInit {
           complete: () => setTimeout(() => this.router.navigate(['/categories']), 2000)
       });
   }
-
+// update categories
   private _updateCategory(category: Category) {
       this.categoriesService.updateCategory(category).subscribe({
           next: () => this.messageService.add({ severity: 'success', summary: 'Success', detail: `Category ${category.name} is updated `}),
@@ -74,7 +75,7 @@ export class CategoriesFormComponent implements OnInit {
           complete: () => setTimeout(() => this.router.navigate(['/categories']), 2000, ),
       });
   }
-
+// editing categories
   private _checkEditMode() {
       this.route.params.subscribe(params => {
           if(params.id) {

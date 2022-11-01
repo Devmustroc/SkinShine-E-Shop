@@ -1,7 +1,10 @@
 <div class="featured-products p-mt-5">
-    <span class="block text-4xl font-bold mb-4 pl-8 pt-4 animate__animated animate__slideInLeft">Featured Products</span>
+    <div class="surface-section px-3 py-4 md:px-3 lg:px-4 text-center pt-0">
+        <img alt="Card"  style="padding-left: 70px" src="assets/images/logo100.png">
+        <span class="block text-4xl font-bold mb-4 pl-8 pt-4 animate__animated animate__slideInLeft" style="align-items: center">Featured Products</span>
+    </div>
     <div class="grid animate__animated animate__fadeInLeftBig">
-        <div class="col-3" *ngFor="let product of featuredProducts">
+        <div class="col-6" *ngFor="let product of featuredProducts">
             <skshop-product-item [product]="product"></skshop-product-item>
         </div>
     </div>
