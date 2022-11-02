@@ -11,7 +11,8 @@ import {ProductsListComponent} from "./pages/products/products-list/products-lis
 import {UsersListComponent} from "./pages/users/users-list/users-list.component";
 import {UsersFormComponent} from "./pages/users/users-form/users-form.component";
 import {OrdersListComponent} from "./pages/orders/orders-list/orders-list.component";
-import {OrdersDetailComponent} from "./pages/orders/orders-detail/orders-detail.component";
+import {OrderDetailsComponent} from "./pages/orders/orders-detail/orders-detail.component";
+
 
 // Create routes
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: '',
+        path: 'dashboard',
         component: DashboardComponent
       },
       {
@@ -66,7 +67,7 @@ const routes: Routes = [
       },
       {
         path: 'orders/:id',
-        component: OrdersDetailComponent
+        component: OrderDetailsComponent
       }
     ]
   }

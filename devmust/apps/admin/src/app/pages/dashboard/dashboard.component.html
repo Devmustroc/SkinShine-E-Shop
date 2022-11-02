@@ -1,51 +1,53 @@
-
-<div class="admin-page" *ngIf="statistics.length">
-    <p-card header="Dashboard" subheader="Latest Updates">
-        <div class="p-grid">
-            <div class="p-col-3">
-                <p-card styleClass="d-orders">
-                    <div class="d-item">
-                        <div>
-                            <i class="pi pi-shopping-cart"></i><br />
-                            <span class="name">Orders</span>
+<div class="admin-page">
+    <p-card header="Dashboard" subheader="Lastest Updates are available">
+        <div class="col-12">
+            <div class="grid">
+                <div class="col-3">
+                    <p-card styleClass="d-orders dashboard-card">
+                        <div class="d-item">
+                            <div>
+                                <i class="pi pi-shopping-cart"></i><br/>
+                                <span class="name">Orders</span>
+                            </div>
+                            <span class="number">{{ordersCount? ordersCount :0 }}</span>
                         </div>
-                        <span class="number">{{ statistics[0] }}</span>
-                    </div>
-                </p-card>
-            </div>
-            <div class="p-col-3">
-                <p-card styleClass="d-products">
-                    <div class="d-item">
-                        <div>
-                            <i class="pi pi-briefcase"></i><br />
-                            <span class="name">Products</span>
+                    </p-card>
+                </div>
+                <div class="col-3">
+                    <p-card styleClass="d-users dashboard-card">
+                        <div class="d-item">
+                            <div>
+                                <i class="pi pi-users"></i><br/>
+                                <span class="name">Users</span>
+                            </div>
+                            <span class="number">{{usersCount? usersCount: 0}}</span>
                         </div>
-                        <span class="number">{{ statistics[1] }}</span>
-                    </div>
-                </p-card>
-            </div>
-            <div class="p-col-3">
-                <p-card styleClass="d-users">
-                    <div class="d-item">
-                        <div>
-                            <i class="pi pi-users"></i><br />
-                            <span class="name">Users</span>
+                    </p-card>
+                </div>
+                <div class="col-3">
+                    <p-card styleClass="d-products dashboard-card">
+                        <div class="d-item">
+                            <div>
+                                <i class="pi pi-box"></i><br/>
+                                <span class="name">Products</span>
+                            </div>
+                            <span class="number">{{productsCount? productsCount : 0}}</span>
                         </div>
-                        <span class="number">{{ statistics[2] }}</span>
-                    </div>
-                </p-card>
-            </div>
-            <div class="p-col-3">
-                <p-card styleClass="d-totalsales">
-                    <div class="d-item">
-                        <div>
-                            <i class="pi pi-dollar"></i><br />
-                            <span class="name">TotalSales</span>
+                    </p-card>
+                </div>
+                <div class="col-3">
+                    <p-card styleClass="d-total-sales dashboard-card">
+                        <div class="d-item">
+                            <div>
+                                <i class="pi pi-dollar"></i><br/>
+                                <span class="name">Revenues</span>
+                            </div>
+                            <span class="sales-number">{{totalSales? (totalSales | currency) : (0 | currency) }}</span>
                         </div>
-                        <span class="number">{{ statistics[3] | currency }}</span>
-                    </div>
-                </p-card>
+                    </p-card>
+                </div>
             </div>
         </div>
+        <p-messages [(value)]="infoMessage" [enableService]="false"></p-messages>
     </p-card>
 </div>

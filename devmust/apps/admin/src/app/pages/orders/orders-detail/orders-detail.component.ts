@@ -1,4 +1,3 @@
-// import module
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Order, OrdersService } from '@devmust/orders';
@@ -13,7 +12,6 @@ import { ORDER_STATUS } from '../order.constants';
     styles: []
 })
 export class OrdersDetailComponent implements OnInit, OnDestroy {
-    // Order form
     order: Order;
     orderStatuses = [];
     selectedStatus: any;

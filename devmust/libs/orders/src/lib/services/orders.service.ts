@@ -44,6 +44,9 @@ export class OrdersService {
             .get<number>(`http://localhost:3000/api/v1/orders/get/totalsales`)
             .pipe(map((objectValue: any) => objectValue.totalsales));
     }
+    getOrderItemByUserId(userId?: string): Observable<Order[]> {
+        return this.http.get<Order[]>(`http://localhost:3000/api/v1/orders/get/userorders/${userId}`)
+    }
 
     getProduct(productId: string): Observable<any> {
         return this.http.get<any>(`http://localhost:3000/api/v1/products/${productId}`);

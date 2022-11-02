@@ -35,6 +35,7 @@ import {SidebarComponent} from "./shared/sidebar/sidebar.component";
 import {UsersModule} from "@devmust/users";
 import {CategoriesService} from "@devmust/products";
 import {ConfirmationService, MessageService} from "primeng/api";
+import {MessagesModule} from "primeng/messages";
 
 const UX_MODULE = [
     CardModule,
@@ -134,8 +135,9 @@ const routes: Routes = [
         FormsModule,
         ReactiveFormsModule,
         UsersModule,
-        RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
-        ...UX_MODULE
+        RouterModule.forRoot(routes, {initialNavigation: 'enabledBlocking'}),
+        ...UX_MODULE,
+        MessagesModule
     ],
     providers: [CategoriesService, MessageService, ConfirmationService],
     bootstrap: [AppComponent]
