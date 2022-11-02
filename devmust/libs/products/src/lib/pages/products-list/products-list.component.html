@@ -11,8 +11,7 @@
             <div class="grid" *ngIf="products">
                 <div
                     [ngClass]="{ 'col-4': !isCategoryPage, 'col-3': isCategoryPage }"
-                    *ngFor="let product of products"
-                >
+                    *ngFor="let product of products">
                     <skshop-product-item [product]="product"></skshop-product-item>
                 </div>
             </div>

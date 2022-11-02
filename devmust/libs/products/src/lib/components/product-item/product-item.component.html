@@ -1,10 +1,13 @@
 <p-card>
-    <div class="product-item" *ngIf="product">
+<div class="product-item" *ngIf="product">
         <div class="product-item-wrapper">
             <img [routerLink]="'/products/'+ product.id" [src]="product.image" style="width: 150px; float: right" class="image" alt="" />
             <h4 class="name">{{ product.name }}</h4>
             <h5 class="price">{{ product.price | currency }}</h5>
+            <div class="product-rating">
+                <p-rating [(ngModel)]="product.rating" [cancel]="false" [disabled]="true"></p-rating>
+            </div>
             <p-button styleClass="add-to-cart mt-4" label="Add to cart" icon="pi pi-shopping-cart" (onClick)="addProductToCart()"></p-button>
         </div>
-    </div>
+</div>
 </p-card>

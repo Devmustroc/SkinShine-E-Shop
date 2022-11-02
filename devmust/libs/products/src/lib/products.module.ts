@@ -15,6 +15,7 @@ import {CategoriesBannerComponent} from "./components/categories-banner/categori
 import {ProductItemComponent} from "./components/product-item/product-item.component";
 import {FeaturedProductsComponent} from "./components/featured-products/featured-products.component";
 import {CardModule} from "primeng/card";
+import {CarouselModule} from "primeng/carousel";
 
 const routes: Routes = [
     {
@@ -41,7 +42,8 @@ const routes: Routes = [
         RatingModule,
         InputNumberModule,
         UiModule,
-        CardModule
+        CardModule,
+        CarouselModule
     ],
     declarations: [
         ProductsSearchComponent,
